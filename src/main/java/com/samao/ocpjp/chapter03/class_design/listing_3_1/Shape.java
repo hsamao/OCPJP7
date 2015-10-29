@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class Shape {
 
-    public double area(){
+    public double area() {
         return 0;
     }
 

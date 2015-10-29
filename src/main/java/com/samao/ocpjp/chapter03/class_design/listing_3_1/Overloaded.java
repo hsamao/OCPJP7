@@ -9,11 +9,11 @@ import org.springframework.stereotype.Component;
 @Component
 public class Overloaded {
 
-    public void aMethod (long val1, int val2) {
+    public void aMethod(long val1, int val2) {
         System.out.println("long + int");
     }
 
-    public void aMethod (int val1, long val2) {
+    public void aMethod(int val1, long val2) {
         System.out.println("int + long");
     }
 

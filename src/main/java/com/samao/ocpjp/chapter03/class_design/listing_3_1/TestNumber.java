@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class TestNumber {
 
-    public double sum (Number [] numbers) throws Exception{
+    public double sum(Number[] numbers) throws Exception {
         double sum = 0.0;
 
         for (Number number : numbers) {

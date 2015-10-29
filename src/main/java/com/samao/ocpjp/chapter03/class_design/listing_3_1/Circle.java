@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
  */
 
 @Component
-public class Circle extends Shape{
+public class Circle extends Shape {
 
     private int radius;
 
@@ -16,8 +16,8 @@ public class Circle extends Shape{
     }
 
     @Override
-    public double area(){
-        return Math.PI*radius*radius;
+    public double area() {
+        return Math.PI * radius * radius;
     }
 
 }
