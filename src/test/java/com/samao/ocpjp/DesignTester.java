@@ -45,6 +45,9 @@ public class DesignTester extends TestCase {
     @Autowired
     private HappyBirthday happyBirthday;
 
+    @Autowired
+    private Overload overload;
+
 
     @Before
     public void setUp() throws Exception {
@@ -116,6 +119,17 @@ public class DesignTester extends TestCase {
     public void happyBirthdayTester(){
         happyBirthday.wish();
         happyBirthday.wish("Hussein Samao");
+    }
+
+    @Test
+    public void overloadTester(){
+        int val = 9;
+        Integer val2 = 7;
+
+        overload.aMethod(val);
+        overload.aMethod(9);
+        overload.aMethod(val2);
+        overload.aMethod("nine");
     }
 
     @Test
