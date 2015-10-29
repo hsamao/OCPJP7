@@ -38,6 +38,9 @@ public class DesignTester extends TestCase {
     @Autowired
     private Point3D point3D;
 
+    @Autowired
+    private DownCast downCast;
+
 
     @Before
     public void setUp() throws Exception {
@@ -83,8 +86,26 @@ public class DesignTester extends TestCase {
 //    }
 
     @Test
-    public void point3DTester(){
+    public void point3DTester() {
         System.out.println(point3D.toString());
+    }
+
+    @Test
+    public void downCastTester() throws Exception {
+
+        Integer number = new Integer(5);
+
+        try {
+            Object object = downCast.getObject(number);
+            String string = downCast.getString(object);
+            System.out.println(string);
+
+        } catch (Exception ex) {
+
+            String errorMessage = ex.getMessage();
+            System.out.println(errorMessage);
+        }
+
     }
 
     @Test

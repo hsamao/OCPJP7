@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
  */
 
 @Component
-public class Point3D extends Point{
+public class Point3D extends Point {
 
     private int zPos;
 
@@ -23,8 +23,8 @@ public class Point3D extends Point{
     public String toString() {
 
         return "Point3D{" +
-                "xPos=" + super.getxPos()+
-                ", yPos=" + super.getyPos()+
+                "xPos=" + super.getxPos() +
+                ", yPos=" + super.getyPos() +
                 " zPos=" + zPos +
                 '}';
     }
