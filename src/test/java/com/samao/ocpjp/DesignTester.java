@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+
 /**
  * Created by hsamao on 10/29/15.
  */
@@ -40,6 +41,9 @@ public class DesignTester extends TestCase {
 
     @Autowired
     private DownCast downCast;
+
+    @Autowired
+    private HappyBirthday happyBirthday;
 
 
     @Before
@@ -106,6 +110,12 @@ public class DesignTester extends TestCase {
             System.out.println(errorMessage);
         }
 
+    }
+
+    @Test
+    public void happyBirthdayTester(){
+        happyBirthday.wish();
+        happyBirthday.wish("Hussein Samao");
     }
 
     @Test
