@@ -65,7 +65,7 @@ public class DesignTester extends TestCase {
     @Test
     public void pointTester() throws Exception {
 
-        Point pointB = new Point(10, 30);
+        Point pointB = new Point(10, 20);
 
         if (pointA.equals(pointB) == true) {
 

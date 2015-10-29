@@ -32,11 +32,15 @@ public class Point {
         return yPos;
     }
 
-    public boolean equals(Point point) {
-        if (point == null) {
+    public boolean equals(Object object) {
+        if (object == null) {
             return false;
-        } else if ((point.getxPos() == xPos) && (point.getyPos() == yPos)) {
-            return true;
+        } else if (object instanceof Point) {
+            Point newPoint = (Point) object;
+            if (newPoint.getxPos() == xPos && newPoint.getyPos() == yPos) {
+                return true;
+            }
+            return false;
         } else {
             return false;
         }
