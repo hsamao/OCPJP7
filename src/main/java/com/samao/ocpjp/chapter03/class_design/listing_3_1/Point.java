@@ -32,6 +32,16 @@ public class Point {
         return yPos;
     }
 
+    public boolean equals(Point point) {
+        if (point == null) {
+            return false;
+        } else if ((point.getxPos() == xPos) && (point.getyPos() == yPos)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     @Override
     public String toString() {
         return "Point{" +

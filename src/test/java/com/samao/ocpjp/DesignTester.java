@@ -4,7 +4,6 @@ package com.samao.ocpjp;
 import com.samao.ocpjp.chapter03.class_design.listing_3_1.*;
 import junit.framework.TestCase;
 import org.junit.After;
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -20,6 +19,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 @ContextConfiguration(locations = {"classpath:/coreJava-config.xml"})
 public class DesignTester extends TestCase {
 
+
     @Autowired
     private Circle circle;
 
@@ -33,17 +33,17 @@ public class DesignTester extends TestCase {
     private Square square;
 
     @Autowired
-    private Point point;
+    private Point pointA;
 
 
     @Before
-    public void setUp() throws Exception{
-        point = new Point(10, 20);
+    public void setUp() throws Exception {
+        pointA = new Point(10, 20);
         System.out.println("startUP was called");
     }
 
     @After
-    public void tearDown() throws Exception{
+    public void tearDown() throws Exception {
         System.out.println("tearDown was called");
     }
 
@@ -63,10 +63,20 @@ public class DesignTester extends TestCase {
     }
 
     @Test
-    public void pointTester () throws Exception {
-        assertEquals(10, point.getxPos());
-        assertEquals(20, point.getyPos());
-        System.out.println(point.toString());
+    public void pointTester() throws Exception {
+
+        Point pointB = new Point(10, 30);
+
+        if (pointA.equals(pointB) == true) {
+
+            System.out.println("pointA equals pointB");
+        } else {
+            System.out.println("pointA doesn't equal pointB");
+        }
+
+        assertEquals(10, pointA.getxPos());
+        assertEquals(20, pointA.getyPos());
+        System.out.println(pointA.toString());
     }
 
     @Test
