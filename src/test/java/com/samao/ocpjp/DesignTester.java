@@ -32,13 +32,16 @@ public class DesignTester extends TestCase {
     @Autowired
     private Square square;
 
+//    @Autowired
+//    private Point pointA;
+
     @Autowired
-    private Point pointA;
+    private Point3D point3D;
 
 
     @Before
     public void setUp() throws Exception {
-        pointA = new Point(10, 20);
+        point3D = new Point3D(10, 20, 30);
         System.out.println("startUP was called");
     }
 
@@ -62,21 +65,26 @@ public class DesignTester extends TestCase {
         System.out.println(square.area());
     }
 
+//    @Test
+//    public void pointTester() throws Exception {
+//
+//        Point pointB = new Point(10, 20);
+//
+//        if (pointA.equals(pointB) == true) {
+//
+//            System.out.println("pointA equals pointB");
+//        } else {
+//            System.out.println("pointA doesn't equal pointB");
+//        }
+//
+//        assertEquals(10, pointA.getxPos());
+//        assertEquals(20, pointA.getyPos());
+//        System.out.println(pointA.toString());
+//    }
+
     @Test
-    public void pointTester() throws Exception {
-
-        Point pointB = new Point(10, 20);
-
-        if (pointA.equals(pointB) == true) {
-
-            System.out.println("pointA equals pointB");
-        } else {
-            System.out.println("pointA doesn't equal pointB");
-        }
-
-        assertEquals(10, pointA.getxPos());
-        assertEquals(20, pointA.getyPos());
-        System.out.println(pointA.toString());
+    public void point3DTester(){
+        System.out.println(point3D.toString());
     }
 
     @Test
