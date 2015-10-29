@@ -7,17 +7,16 @@ import org.springframework.stereotype.Component;
  */
 
 @Component
-public class Circle extends Shape{
+public class Square extends Shape {
 
-    private int radius;
+    private int side;
 
-    public void setRadius(int radius) {
-        this.radius = radius;
+    public void setSide(int side) {
+        this.side = side;
     }
 
     @Override
-    public double area(){
-        return Math.PI*radius*radius;
+    public double area() {
+        return (side * side);
     }
-
 }

@@ -3,6 +3,7 @@ package com.samao.ocpjp;
 
 import com.samao.ocpjp.chapter03.class_design.listing_3_1.Circle;
 import com.samao.ocpjp.chapter03.class_design.listing_3_1.Overloaded;
+import com.samao.ocpjp.chapter03.class_design.listing_3_1.Square;
 import com.samao.ocpjp.chapter03.class_design.listing_3_1.TestNumber;
 import org.junit.After;
 import org.junit.Before;
@@ -21,13 +22,16 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 public class DesignTester {
 
     @Autowired
-    private Circle circle = new Circle(30,30, 40);
+    private Circle circle;
 
     @Autowired
     private Overloaded overloaded;
 
     @Autowired
     private TestNumber testNumber;
+
+    @Autowired
+    private Square square;
 
 
     @Before
@@ -42,12 +46,17 @@ public class DesignTester {
 
     @Test
     public void circleTester (){
-//        circle = new Circle();
+        double area;
 
-        //circle.setCircle(20, 20, 10);
-        //circle.toString();
-        System.out.println(circle.toString());
-        System.out.println("circleTester was called");
+        circle.setRadius(4);
+        area = circle.area();
+        System.out.println("circle area is : " + area);
+    }
+
+    @Test
+    public void squareTester () {
+        square.setSide(10);
+        System.out.println(square.area());
     }
 
     @Test
