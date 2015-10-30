@@ -2,6 +2,7 @@ package com.samao.ocpjp.chapter04.advanced.class_design.test;
 
 import com.samao.ocpjp.chapter04.advanced.class_design.Counter;
 import com.samao.ocpjp.chapter04.advanced.class_design.Rectangular;
+import com.samao.ocpjp.chapter04.advanced.class_design.Shape;
 import junit.framework.TestCase;
 import org.junit.After;
 import org.junit.Before;
@@ -23,6 +24,9 @@ public class AdvancedDesignClass extends TestCase {
     private Counter counter;
 
     @Autowired
+    private Shape shape;
+
+    @Autowired
     private Rectangular rectangular;
 
 
@@ -34,6 +38,14 @@ public class AdvancedDesignClass extends TestCase {
     @After
     public void tearDown() {
         System.out.println("tearDown was called");
+    }
+
+    @Test
+    public void shapeTester() {
+        Shape.Color white = new Shape.Color(255,255,255);
+
+        System.out.println("White color has values: " + white);
+
     }
 
     @Test
@@ -59,5 +71,7 @@ public class AdvancedDesignClass extends TestCase {
         anotherCounter.numberOfInstances();
 
     }
+
+
 
 }
