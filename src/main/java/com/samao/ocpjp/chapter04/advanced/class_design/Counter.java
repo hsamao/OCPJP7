@@ -9,10 +9,16 @@ import org.springframework.stereotype.Component;
 @Component
 public class Counter {
 
-    private static int count = 0;
+    private static int count;
+    private int number;
+
+
+    static {
+        count = 1;
+    }
 
     public Counter() {
-        count ++;
+        count++;
     }
 
     public void numberOfInstances() {

@@ -2,7 +2,6 @@ package com.samao.ocpjp.chapter04.advanced.class_design.test;
 
 import com.samao.ocpjp.chapter04.advanced.class_design.Counter;
 import com.samao.ocpjp.chapter04.advanced.class_design.Rectangular;
-import com.samao.ocpjp.chapter04.advanced.class_design.Shape;
 import junit.framework.TestCase;
 import org.junit.After;
 import org.junit.Before;
@@ -17,7 +16,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
  */
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration (locations = "classpath:/coreJava-config.xml")
+@ContextConfiguration(locations = "classpath:/coreJava-config.xml")
 public class AdvancedDesignClass extends TestCase {
 
     @Autowired
@@ -28,17 +27,17 @@ public class AdvancedDesignClass extends TestCase {
 
 
     @Before
-    public void setUp (){
+    public void setUp() {
         System.out.println("setUp was called");
     }
 
     @After
-    public void tearDown (){
+    public void tearDown() {
         System.out.println("tearDown was called");
     }
 
     @Test
-    public void rectangularTester () {
+    public void rectangularTester() {
 
         double side = 4;
 
@@ -50,7 +49,7 @@ public class AdvancedDesignClass extends TestCase {
     }
 
     @Test
-    public void counterTester (){
+    public void counterTester() {
         counter.numberOfInstances();
 
         Counter counter = new Counter();
