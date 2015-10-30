@@ -17,7 +17,7 @@ import org.springframework.stereotype.Component;
 
     @Override
     public void description() {
-        System.out.println("Rectangular area is: ");
+        System.out.print("Rectangular area is: ");
     }
 
 }

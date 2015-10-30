@@ -1,5 +1,6 @@
 package com.samao.ocpjp.chapter04.advanced.class_design.test;
 
+import com.samao.ocpjp.chapter04.advanced.class_design.Counter;
 import com.samao.ocpjp.chapter04.advanced.class_design.Rectangular;
 import com.samao.ocpjp.chapter04.advanced.class_design.Shape;
 import junit.framework.TestCase;
@@ -23,6 +24,9 @@ public class AdvancedDesignClass extends TestCase {
     @Autowired
     private Rectangular rectangular;
 
+    /*@Autowired
+    private Counter counter;*/
+
     @Before
     public void setUp (){
         System.out.println("setUp was called");
@@ -36,15 +40,22 @@ public class AdvancedDesignClass extends TestCase {
     @Test
     public void rectangularTester () {
 
-        Shape rect = new Rectangular();
-
         double side = 4;
 
-        double result = rect.getArea(side);
+        double result = rectangular.getArea(side);
 
-        rect.description();
+        rectangular.description();
         System.out.println(result);
 
+    }
+
+    @Test
+    public void counterTester (){
+        Counter counter = new Counter();
+        counter.numberOfInstances();
+
+        Counter anotherCounter = new Counter();
+        anotherCounter.numberOfInstances();
     }
 
 }
