@@ -20,12 +20,12 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 @ContextConfiguration (locations = "classpath:/coreJava-config.xml")
 public class AdvancedDesignClass extends TestCase {
 
+    @Autowired
+    private Counter counter;
 
     @Autowired
     private Rectangular rectangular;
 
-    /*@Autowired
-    private Counter counter;*/
 
     @Before
     public void setUp (){
@@ -51,11 +51,14 @@ public class AdvancedDesignClass extends TestCase {
 
     @Test
     public void counterTester (){
+        counter.numberOfInstances();
+
         Counter counter = new Counter();
         counter.numberOfInstances();
 
         Counter anotherCounter = new Counter();
         anotherCounter.numberOfInstances();
+
     }
 
 }

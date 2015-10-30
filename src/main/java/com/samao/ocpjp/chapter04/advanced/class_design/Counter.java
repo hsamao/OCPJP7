@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class Counter {
 
-    private int count = 0;
+    private static int count = 0;
 
     public Counter() {
         count ++;
