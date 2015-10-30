@@ -1,7 +1,7 @@
-package com.samao.ocpjp;
+package com.samao.ocpjp.chapter03.class_design.test;
 
 
-import com.samao.ocpjp.chapter03.class_design.listing_3_1.*;
+import com.samao.ocpjp.chapter03.class_design.*;
 import junit.framework.TestCase;
 import org.junit.After;
 import org.junit.Before;

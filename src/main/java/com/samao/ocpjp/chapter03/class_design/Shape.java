@@ -1,4 +1,4 @@
-package com.samao.ocpjp.chapter03.class_design.listing_3_1;
+package com.samao.ocpjp.chapter03.class_design;
 
 import org.springframework.stereotype.Component;
 
@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
  * Created by hsamao on 10/29/15.
  */
 
-@Component
+//@Component
 public class Shape {
 
     public double area() {

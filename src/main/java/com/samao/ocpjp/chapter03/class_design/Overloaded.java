@@ -1,4 +1,4 @@
-package com.samao.ocpjp.chapter03.class_design.listing_3_1;
+package com.samao.ocpjp.chapter03.class_design;
 
 import org.springframework.stereotype.Component;
 
