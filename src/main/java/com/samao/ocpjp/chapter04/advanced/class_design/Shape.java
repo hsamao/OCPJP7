@@ -7,13 +7,23 @@ import org.springframework.stereotype.Component;
  */
 
 @Component
-public class Shape {
+ abstract public class Shape {
 
-    final public void setParentShape () {
+    public double getArea (double side) {
+        return 0;
+    }
+
+    public abstract void description ();
+
+
+
+    /*final public void setParentShape () {
 
     }
 
     public Shape getParentShape () {
         return null;
-    }
+    }*/
+
+
 }
