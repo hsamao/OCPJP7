@@ -48,7 +48,7 @@ public class AdvancedDesignClass extends TestCase {
 
     @Test
     public void setEnumTest() {
-        enumTest = new EnumTest(PrinterType.INKJET);
+        enumTest = new EnumTest(PrinterType.LASER);
         enumTest.feature();
     }
 

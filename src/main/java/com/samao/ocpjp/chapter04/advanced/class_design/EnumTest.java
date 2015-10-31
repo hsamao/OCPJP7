@@ -30,5 +30,6 @@ public class EnumTest {
                 System.out.println("Laser printers provide best quality prints");
                 break;
         }
+        System.out.println("Print page capacity per minute: " + printerType.getPagePrintCapacity());
     }
 }
