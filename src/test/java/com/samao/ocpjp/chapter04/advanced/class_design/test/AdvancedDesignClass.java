@@ -1,9 +1,6 @@
 package com.samao.ocpjp.chapter04.advanced.class_design.test;
 
-import com.samao.ocpjp.chapter04.advanced.class_design.Circle;
-import com.samao.ocpjp.chapter04.advanced.class_design.Counter;
-import com.samao.ocpjp.chapter04.advanced.class_design.Rectangular;
-import com.samao.ocpjp.chapter04.advanced.class_design.Shape;
+import com.samao.ocpjp.chapter04.advanced.class_design.*;
 import junit.framework.TestCase;
 import org.junit.After;
 import org.junit.Before;
@@ -33,6 +30,8 @@ public class AdvancedDesignClass extends TestCase {
     @Autowired
     private Circle circle;
 
+    @Autowired
+    private StatusReporter statusReporter;
 
     @Before
     public void setUp() {
@@ -43,6 +42,13 @@ public class AdvancedDesignClass extends TestCase {
     public void tearDown() {
         System.out.println("tearDown was called");
     }
+
+    @Test
+    public  void statusReporterTester () {
+        Shape.Color descriptiveColor = StatusReporter.getDescriptiveColor (new Shape.Color(230,99,26));
+        System.out.println(descriptiveColor);
+    }
+
 
     @Test
     public void circleTester() {
