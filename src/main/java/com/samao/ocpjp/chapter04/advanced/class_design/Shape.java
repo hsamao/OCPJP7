@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
  * Created by hsamao on 10/30/15.
  */
 
-@Component
+//@Component
  abstract public class Shape {
 
     public static class Color {
