@@ -11,14 +11,12 @@ public class StatusReporter {
 
     public static Shape.Color getDescriptiveColor (final Shape.Color color) {
 
-        class DescriptiveColor extends Shape.Color {
+       return new Shape.Color() {
             @Override
             public String toString() {
                 return "You selected a color with RGB values " + color;
             }
-        }
-
-        return new DescriptiveColor();
+        };
     }
 
 
