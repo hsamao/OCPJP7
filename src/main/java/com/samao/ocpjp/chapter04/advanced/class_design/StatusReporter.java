@@ -9,9 +9,9 @@ import org.springframework.stereotype.Component;
 @Component
 public class StatusReporter {
 
-    public static Shape.Color getDescriptiveColor (final Shape.Color color) {
+    public static Shape.Color getDescriptiveColor(final Shape.Color color) {
 
-       return new Shape.Color() {
+        return new Shape.Color() {
             @Override
             public String toString() {
                 return "You selected a color with RGB values " + color;

@@ -33,6 +33,9 @@ public class AdvancedDesignClass extends TestCase {
     @Autowired
     private StatusReporter statusReporter;
 
+    @Autowired
+    private EnumTest enumTest;
+
     @Before
     public void setUp() {
         System.out.println("setUp was called");
@@ -44,8 +47,14 @@ public class AdvancedDesignClass extends TestCase {
     }
 
     @Test
-    public  void statusReporterTester () {
-        Shape.Color descriptiveColor = StatusReporter.getDescriptiveColor (new Shape.Color(230,99,26));
+    public void setEnumTest() {
+        enumTest = new EnumTest(PrinterType.INKJET);
+        enumTest.feature();
+    }
+
+    @Test
+    public void statusReporterTester() {
+        Shape.Color descriptiveColor = StatusReporter.getDescriptiveColor(new Shape.Color(230, 99, 26));
         System.out.println(descriptiveColor);
     }
 
@@ -59,7 +68,7 @@ public class AdvancedDesignClass extends TestCase {
 
     @Test
     public void shapeTester() {
-        Shape.Color white = new Shape.Color(255,255,255);
+        Shape.Color white = new Shape.Color(255, 255, 255);
 
         System.out.println("White color has values: " + white);
 
@@ -88,7 +97,6 @@ public class AdvancedDesignClass extends TestCase {
         anotherCounter.numberOfInstances();
 
     }
-
 
 
 }
