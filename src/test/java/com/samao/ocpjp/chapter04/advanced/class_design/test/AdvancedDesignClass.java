@@ -1,5 +1,6 @@
 package com.samao.ocpjp.chapter04.advanced.class_design.test;
 
+import com.samao.ocpjp.chapter04.advanced.class_design.Circle;
 import com.samao.ocpjp.chapter04.advanced.class_design.Counter;
 import com.samao.ocpjp.chapter04.advanced.class_design.Rectangular;
 import com.samao.ocpjp.chapter04.advanced.class_design.Shape;
@@ -29,6 +30,9 @@ public class AdvancedDesignClass extends TestCase {
     @Autowired
     private Rectangular rectangular;
 
+    @Autowired
+    private Circle circle;
+
 
     @Before
     public void setUp() {
@@ -38,6 +42,13 @@ public class AdvancedDesignClass extends TestCase {
     @After
     public void tearDown() {
         System.out.println("tearDown was called");
+    }
+
+    @Test
+    public void circleTester() {
+        circle = new Circle(5, 4, 9);
+
+        System.out.println(circle.toString());
     }
 
     @Test
