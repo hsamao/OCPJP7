@@ -2,6 +2,7 @@ package com.samao.ocpjp.chapter05.oodesign.principles;
 
 
 import com.samao.ocpjp.chapter05.oodesign.principles.and.patterns.Circle;
+import com.samao.ocpjp.chapter05.oodesign.principles.and.patterns.CircleCompsite;
 import com.samao.ocpjp.chapter05.oodesign.principles.and.patterns.Rectangle;
 import junit.framework.TestCase;
 import org.junit.After;
@@ -26,6 +27,9 @@ public class OodesignPrincipleTest extends TestCase {
     @Autowired
     private Rectangle rectangle;
 
+    @Autowired
+    private CircleCompsite circleCompsite;
+
     @Before
     public void setUp() {
         System.out.println("setUp was called");
@@ -37,14 +41,20 @@ public class OodesignPrincipleTest extends TestCase {
     }
 
     @Test
-    public void setCircle() {
+    public void CircleCompsiteTester () {
+        circleCompsite = new CircleCompsite(10, 20, 30);
+
+        System.out.println(circleCompsite.toString());
+    }
+    @Test
+    public void CircleTester() {
         circle = new Circle(10, 20, 30);
         System.out.println(circle.toString());
         circle.roll(30);
     }
 
     @Test
-    public void setRectangle() {
+    public void RectangleTester() {
         rectangle = new Rectangle(40, 20);
         System.out.printf(rectangle.toString());
         rectangle.rotate(30);
