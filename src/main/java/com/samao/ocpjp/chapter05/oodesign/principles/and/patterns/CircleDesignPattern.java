@@ -6,6 +6,7 @@ import org.springframework.stereotype.Component;
  * Created by hsamao on 11/1/15.
  */
 
+/*
 @Component
 public class CircleDesignPattern {
 
@@ -53,3 +54,4 @@ public class CircleDesignPattern {
                 '}';
     }
 }
+*/

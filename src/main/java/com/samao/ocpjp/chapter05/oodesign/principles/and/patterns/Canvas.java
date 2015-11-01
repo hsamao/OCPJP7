@@ -1,11 +1,19 @@
 package com.samao.ocpjp.chapter05.oodesign.principles.and.patterns;
 
+import org.springframework.stereotype.Component;
+
+import java.util.Observable;
+import java.util.Observer;
+
 /**
  * Created by hsamao on 11/1/15.
  */
-public class Canvas {
 
-    public void update(CircleDesignPattern circleDesignPattern) {
+@Component
+public class Canvas implements Observer{
+
+    public void update(Observable o, Object arg) {
         System.out.println("Canvas :: updated");
+
     }
 }

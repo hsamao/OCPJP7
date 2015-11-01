@@ -28,9 +28,11 @@ public class OodesignPrincipleTest extends TestCase {
     @Autowired
     private CircleCompsite circleCompsite;
 
-    @Autowired
-    private CircleDesignPattern circleDesignPattern;
+    /*@Autowired
+    private CircleDesignPattern circleDesignPattern;*/
 
+    @Autowired
+    private CircleEnhancedDesignPattern circleEnhancedDesignPattern;
     @Before
     public void setUp() {
         System.out.println("setUp was called");
@@ -42,13 +44,25 @@ public class OodesignPrincipleTest extends TestCase {
     }
 
     @Test
+    public void CircleEnhancedDesignPattern () {
+        circleEnhancedDesignPattern = new CircleEnhancedDesignPattern(10, 20, 30);
+        System.out.println(circleEnhancedDesignPattern);
+
+        circleEnhancedDesignPattern.addObserver(new Canvas());
+        circleEnhancedDesignPattern.addObserver(new ShapeArchiver());
+
+        circleEnhancedDesignPattern.setRadius(50);
+        System.out.println(circleEnhancedDesignPattern);
+    }
+
+   /* @Test
     public void circleDesignPattern () {
         circleDesignPattern = new CircleDesignPattern(10, 20, 30);
         circleDesignPattern.setCanvas(new Canvas());
         circleDesignPattern.setShapeArchiver(new ShapeArchiver());
 
         System.out.println(circleDesignPattern);
-    }
+    }*/
 
     @Test
     public void CircleCompsiteTester () {
