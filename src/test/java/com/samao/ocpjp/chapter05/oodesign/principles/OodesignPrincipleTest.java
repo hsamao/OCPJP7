@@ -37,6 +37,9 @@ public class OodesignPrincipleTest extends TestCase {
     @Autowired
     private CanvasFactoryDesignPattern canvasFactoryDesignPattern;
 
+    @Autowired
+    private CalendarFactory calendarFactory;
+
     @Before
     public void setUp() {
         System.out.println("setUp was called");
@@ -45,6 +48,11 @@ public class OodesignPrincipleTest extends TestCase {
     @After
     public void tearDown() {
         System.out.println("tearDown was called");
+    }
+
+    @Test
+    public void calendarFactoryTester(){
+        calendarFactory.getCalender();
     }
 
     @Test
