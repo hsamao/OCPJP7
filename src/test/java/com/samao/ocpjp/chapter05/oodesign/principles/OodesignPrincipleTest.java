@@ -1,9 +1,7 @@
 package com.samao.ocpjp.chapter05.oodesign.principles;
 
 
-import com.samao.ocpjp.chapter05.oodesign.principles.and.patterns.Circle;
-import com.samao.ocpjp.chapter05.oodesign.principles.and.patterns.CircleCompsite;
-import com.samao.ocpjp.chapter05.oodesign.principles.and.patterns.Rectangle;
+import com.samao.ocpjp.chapter05.oodesign.principles.and.patterns.*;
 import junit.framework.TestCase;
 import org.junit.After;
 import org.junit.Before;
@@ -30,6 +28,9 @@ public class OodesignPrincipleTest extends TestCase {
     @Autowired
     private CircleCompsite circleCompsite;
 
+    @Autowired
+    private CircleDesignPattern circleDesignPattern;
+
     @Before
     public void setUp() {
         System.out.println("setUp was called");
@@ -38,6 +39,15 @@ public class OodesignPrincipleTest extends TestCase {
     @After
     public void tearDown() {
         System.out.println("tearDown was called");
+    }
+
+    @Test
+    public void circleDesignPattern () {
+        circleDesignPattern = new CircleDesignPattern(10, 20, 30);
+        circleDesignPattern.setCanvas(new Canvas());
+        circleDesignPattern.setShapeArchiver(new ShapeArchiver());
+
+        System.out.println(circleDesignPattern);
     }
 
     @Test
