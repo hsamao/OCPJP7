@@ -6,7 +6,9 @@ import java.util.List;
  * Created by hsamao on 11/1/15.
  */
 
+public class QuickSort implements Sorting {
 
-interface Sorting {
-    List sort (List list);
+    public List sort(List list) {
+        return list;
+    }
 }

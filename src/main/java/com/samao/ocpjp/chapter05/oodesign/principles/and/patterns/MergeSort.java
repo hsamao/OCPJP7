@@ -7,6 +7,9 @@ import java.util.List;
  */
 
 
-interface Sorting {
-    List sort (List list);
+class MergeSort implements Sorting {
+
+    public List sort(List list) {
+        return list;
+    }
 }
