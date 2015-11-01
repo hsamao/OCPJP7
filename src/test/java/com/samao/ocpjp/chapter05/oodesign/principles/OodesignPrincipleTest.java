@@ -33,6 +33,10 @@ public class OodesignPrincipleTest extends TestCase {
 
     @Autowired
     private CircleEnhancedDesignPattern circleEnhancedDesignPattern;
+
+    @Autowired
+    private CanvasFactoryDesignPattern canvasFactoryDesignPattern;
+
     @Before
     public void setUp() {
         System.out.println("setUp was called");
@@ -44,7 +48,16 @@ public class OodesignPrincipleTest extends TestCase {
     }
 
     @Test
-    public void CircleEnhancedDesignPattern () {
+    public void canvasFactoryDesignPatternTester() {
+        canvasFactoryDesignPattern.addNewShape("circle");
+        canvasFactoryDesignPattern.addNewShape("rectangle");
+
+        canvasFactoryDesignPattern.redraw();
+
+    }
+
+    @Test
+    public void CircleEnhancedDesignPatternTester () {
         circleEnhancedDesignPattern = new CircleEnhancedDesignPattern(10, 20, 30);
         System.out.println(circleEnhancedDesignPattern);
 
@@ -65,7 +78,7 @@ public class OodesignPrincipleTest extends TestCase {
     }*/
 
     @Test
-    public void CircleCompsiteTester () {
+    public void CircleCompositeTester () {
         circleCompsite = new CircleCompsite(10, 20, 30);
 
         System.out.println(circleCompsite);
