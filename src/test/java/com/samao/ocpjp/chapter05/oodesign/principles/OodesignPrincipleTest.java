@@ -44,19 +44,19 @@ public class OodesignPrincipleTest extends TestCase {
     public void CircleCompsiteTester () {
         circleCompsite = new CircleCompsite(10, 20, 30);
 
-        System.out.println(circleCompsite.toString());
+        System.out.println(circleCompsite);
     }
     @Test
     public void CircleTester() {
         circle = new Circle(10, 20, 30);
-        System.out.println(circle.toString());
+        System.out.println(circle);
         circle.roll(30);
     }
 
     @Test
     public void RectangleTester() {
         rectangle = new Rectangle(40, 20);
-        System.out.printf(rectangle.toString());
+        System.out.println(rectangle);
         rectangle.rotate(30);
     }
 }
