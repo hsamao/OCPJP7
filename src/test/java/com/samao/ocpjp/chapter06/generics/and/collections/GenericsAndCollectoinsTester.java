@@ -21,6 +21,9 @@ public class GenericsAndCollectoinsTester {
     @Autowired
     private OldContainerTest oldContainerTest;
 
+    @Autowired
+    private BoxPrinter boxPrinter;
+
     @Before
     public void setUP (){
         System.out.println("setUp was called");
@@ -29,6 +32,14 @@ public class GenericsAndCollectoinsTester {
     @After
     public void tearDown (){
         System.out.println("tearDown was called");
+    }
+
+    @Test
+    public void boxPrinterTester() {
+        boxPrinter = new BoxPrinter(10);
+        System.out.println(boxPrinter);
+
+        System.out.println(new BoxPrinter("Hello World"));
     }
 
     @Test
