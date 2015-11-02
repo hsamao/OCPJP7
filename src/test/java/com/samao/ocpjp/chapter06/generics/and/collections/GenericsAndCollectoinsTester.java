@@ -27,6 +27,9 @@ public class GenericsAndCollectoinsTester {
     @Autowired
     private BoxPrinterGeneric boxPrinterGeneric;
 
+    @Autowired
+    private Pair pair;
+
     @Before
     public void setUP() {
         System.out.println("setUp was called");
@@ -38,9 +41,16 @@ public class GenericsAndCollectoinsTester {
     }
 
     @Test
-    public void boxPrinterGerneric() {
+    public void pairTester() {
+        pair = new Pair <Integer, String> (2010, "South Africa");
+        System.out.println(pair);
+    }
+
+    @Test
+    public void boxPrinterGerneric() throws Exception{
         boxPrinterGeneric = new BoxPrinterGeneric<Integer>(new Integer(10));
         System.out.println(boxPrinterGeneric);
+
 
         BoxPrinterGeneric <String> stringValue = new BoxPrinterGeneric<String>("Hello World");
         System.out.println(stringValue);

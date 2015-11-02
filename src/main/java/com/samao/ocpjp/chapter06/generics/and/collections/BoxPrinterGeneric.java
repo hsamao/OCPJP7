@@ -18,6 +18,10 @@ public class BoxPrinterGeneric <T> {
         this.value = value;
     }
 
+    public T getValue() {
+        return value;
+    }
+
     @Override
     public String toString() {
         return "[" + value +
