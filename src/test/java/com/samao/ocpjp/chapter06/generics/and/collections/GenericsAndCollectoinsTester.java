@@ -38,6 +38,9 @@ public class GenericsAndCollectoinsTester {
     @Autowired
     private Utilities utilities;
 
+    @Autowired
+    private WildCardUse wildCardUse;
+
     @Before
     public void setUP() {
         System.out.println("setUp was called");
@@ -46,6 +49,21 @@ public class GenericsAndCollectoinsTester {
     @After
     public void tearDown() {
         System.out.println("tearDown was called");
+    }
+
+    @Test
+    public void wildCardUseTester () {
+        List<Integer> integerList = new ArrayList<>();
+        integerList.add(10);
+        integerList.add(20);
+        wildCardUse.printList(integerList);
+
+        List<String> stringList = new ArrayList<>();
+        stringList.add("10");
+        stringList.add("20");
+        wildCardUse.printList(stringList);
+
+
     }
 
     @Test
