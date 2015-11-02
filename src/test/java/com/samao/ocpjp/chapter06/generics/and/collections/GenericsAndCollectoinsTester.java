@@ -24,19 +24,31 @@ public class GenericsAndCollectoinsTester {
     @Autowired
     private BoxPrinter boxPrinter;
 
+    @Autowired
+    private BoxPrinterGeneric boxPrinterGeneric;
+
     @Before
-    public void setUP (){
+    public void setUP() {
         System.out.println("setUp was called");
     }
 
     @After
-    public void tearDown (){
+    public void tearDown() {
         System.out.println("tearDown was called");
     }
 
     @Test
-    public void boxPrinterTester() throws Exception{
-        boxPrinter = new BoxPrinter(new Integer(10));
+    public void boxPrinterGerneric() {
+        boxPrinterGeneric = new BoxPrinterGeneric<Integer>(new Integer(10));
+        System.out.println(boxPrinterGeneric);
+
+        BoxPrinterGeneric <String> stringValue = new BoxPrinterGeneric<String>("Hello World");
+        System.out.println(stringValue);
+    }
+
+    @Test
+    public void boxPrinterTester() throws Exception {
+        boxPrinter = new BoxPrinter(10);
         System.out.println(boxPrinter);
 
         Integer intValue1 = (Integer) boxPrinter.getObject();
@@ -56,7 +68,7 @@ public class GenericsAndCollectoinsTester {
     }
 
     @Test
-    public void oldContainerTest() throws Exception{
+    public void oldContainerTest() throws Exception {
         Vector floatValue = new Vector();
         floatValue.add(10.0f);
         floatValue.add(100.0);
@@ -65,8 +77,7 @@ public class GenericsAndCollectoinsTester {
             System.out.println(floatTemp);
         } catch (Exception ex) {
             System.out.println(ex.getMessage());
-        }
-        finally {
+        } finally {
             System.out.println(floatValue);
 
         }
