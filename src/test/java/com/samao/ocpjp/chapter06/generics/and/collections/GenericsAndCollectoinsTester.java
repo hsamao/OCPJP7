@@ -9,6 +9,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Vector;
 
 /**
@@ -34,6 +35,9 @@ public class GenericsAndCollectoinsTester {
     @Autowired
     private PairOfT pairOfTNames;
 
+    @Autowired
+    private Utilities utilities;
+
     @Before
     public void setUP() {
         System.out.println("setUp was called");
@@ -42,6 +46,18 @@ public class GenericsAndCollectoinsTester {
     @After
     public void tearDown() {
         System.out.println("tearDown was called");
+    }
+
+    @Test
+    public void utilitiesTester() {
+
+        List <Integer> integerArrayListlist = new ArrayList<>();
+        integerArrayListlist.add(10);
+        integerArrayListlist.add(20);
+        System.out.println("The original list is " + integerArrayListlist);
+
+        utilities.fill(integerArrayListlist, 100);
+        System.out.println("The list after calling Utilities.fill() is :" + integerArrayListlist);
     }
 
     @Test
