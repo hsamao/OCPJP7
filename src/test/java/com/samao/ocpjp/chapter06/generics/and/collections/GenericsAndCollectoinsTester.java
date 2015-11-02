@@ -41,6 +41,9 @@ public class GenericsAndCollectoinsTester {
     @Autowired
     private WildCardUse wildCardUse;
 
+    @Autowired
+    private BoundedWildcardUse boundedWildcardUse;
+
     @Before
     public void setUP() {
         System.out.println("setUp was called");
@@ -52,7 +55,24 @@ public class GenericsAndCollectoinsTester {
     }
 
     @Test
-    public void wildCardUseTester () {
+    public void boundedWildcardUseTester() {
+        List<Integer> listOfInteger = new ArrayList<>();
+        List<Double> listOfDouble = new ArrayList<>();
+
+        for (int i = 0; i < 5; i++) {
+            listOfInteger.add( i);
+            listOfDouble.add((double)(i * i));
+        }
+
+        System.out.println("The Integer list is : " + listOfInteger);
+        System.out.println(boundedWildcardUse.printList(listOfInteger));
+
+        System.out.println("The Double list is : " + listOfDouble);
+        System.out.println(boundedWildcardUse.printList(listOfDouble));
+    }
+
+    @Test
+    public void wildCardUseTester() {
         List<Integer> integerList = new ArrayList<>();
         integerList.add(10);
         integerList.add(20);
@@ -63,13 +83,12 @@ public class GenericsAndCollectoinsTester {
         stringList.add("20");
         wildCardUse.printList(stringList);
 
-
     }
 
     @Test
     public void utilitiesTester() {
 
-        List <Integer> integerArrayListlist = new ArrayList<>();
+        List<Integer> integerArrayListlist = new ArrayList<>();
         integerArrayListlist.add(10);
         integerArrayListlist.add(20);
         System.out.println("The original list is " + integerArrayListlist);
@@ -79,7 +98,7 @@ public class GenericsAndCollectoinsTester {
     }
 
     @Test
-    public void pairOfTTester(){
+    public void pairOfTTester() {
         pairOfTNames = new PairOfT<String>("Hussein", "Samao");
         System.out.println(pairOfTNames.getValue1() + " " + pairOfTNames.getValue2());
 
@@ -90,20 +109,20 @@ public class GenericsAndCollectoinsTester {
     @Test
     public void pairTester() {
 
-        worldCup = new Pair  (2014, "Brazil");
+        worldCup = new Pair(2014, "Brazil");
 
         System.out.println(worldCup.getFirstValue() + " " + worldCup.getSecondValue());
-       // System.out.println(worldCup);
+        // System.out.println(worldCup);
 
     }
 
     @Test
-    public void boxPrinterGerneric() throws Exception{
+    public void boxPrinterGerneric() throws Exception {
         boxPrinterGeneric = new BoxPrinterGeneric<Integer>(new Integer(10));
         System.out.println(boxPrinterGeneric);
 
 
-        BoxPrinterGeneric <String> stringValue = new BoxPrinterGeneric<String>("Hello World");
+        BoxPrinterGeneric<String> stringValue = new BoxPrinterGeneric<String>("Hello World");
         System.out.println(stringValue);
     }
 
