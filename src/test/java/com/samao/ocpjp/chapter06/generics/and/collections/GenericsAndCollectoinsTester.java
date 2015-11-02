@@ -29,7 +29,7 @@ public class GenericsAndCollectoinsTester {
     private BoxPrinterGeneric boxPrinterGeneric;
 
     @Autowired
-    private Pair worldCup;
+    private Pair<Integer, String> worldCup;
 
     @Autowired
     private PairOfT pairOfTNames;
@@ -56,11 +56,10 @@ public class GenericsAndCollectoinsTester {
     @Test
     public void pairTester() {
 
-        worldCup.setValues(2006, "Germany");
-        worldCup.setValues(2010, "South Africa");
-        worldCup.setValues(2015, "Brazil");
+        worldCup = new Pair <> (2014, "Brazil");
 
-        System.out.println(worldCup);
+        System.out.println(worldCup.getFirstValue() + " " + worldCup.getSecondValue());
+       // System.out.println(worldCup);
 
     }
 
