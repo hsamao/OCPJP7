@@ -56,7 +56,7 @@ public class GenericsAndCollectoinsTester {
     @Test
     public void pairTester() {
 
-        worldCup = new Pair <> (2014, "Brazil");
+        worldCup = new Pair  (2014, "Brazil");
 
         System.out.println(worldCup.getFirstValue() + " " + worldCup.getSecondValue());
        // System.out.println(worldCup);
