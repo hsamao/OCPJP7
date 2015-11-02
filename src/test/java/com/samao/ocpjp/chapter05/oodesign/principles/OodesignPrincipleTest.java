@@ -43,6 +43,9 @@ public class OodesignPrincipleTest extends TestCase {
     @Autowired
     private CanvasAbstractFactoryDesignPattern canvasAbstractFactoryDesignPattern;
 
+    @Autowired
+    private CircleDAODesignPattern circleDAODesignPattern;
+
     @Before
     public void setUp() {
         System.out.println("setUp was called");
@@ -51,6 +54,16 @@ public class OodesignPrincipleTest extends TestCase {
     @After
     public void tearDown() {
         System.out.println("tearDown was called");
+    }
+
+    @Test
+    public void circleDAODesignPattern(){
+        circleDAODesignPattern = new CircleDAODesignPattern(10, 20, 30);
+        System.out.println(circleDAODesignPattern);
+
+        CircleTransfer circleTransfer = circleDAODesignPattern.getCircleTransferObject();
+        CircleDAO circleDAO = DAOFactory.getCircleDAO("RDBMS");
+        circleDAO.insertCircle(circleTransfer);
     }
 
     @Test
