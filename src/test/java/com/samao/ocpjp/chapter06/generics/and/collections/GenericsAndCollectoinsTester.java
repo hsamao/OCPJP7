@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import java.util.ArrayList;
 import java.util.Vector;
 
 /**
@@ -28,7 +29,10 @@ public class GenericsAndCollectoinsTester {
     private BoxPrinterGeneric boxPrinterGeneric;
 
     @Autowired
-    private Pair pair;
+    private Pair worldCup;
+
+    @Autowired
+    private PairOfT pairOfTNames;
 
     @Before
     public void setUP() {
@@ -41,9 +45,23 @@ public class GenericsAndCollectoinsTester {
     }
 
     @Test
+    public void pairOfTTester(){
+        pairOfTNames = new PairOfT<String>("Hussein", "Samao");
+        System.out.println(pairOfTNames.getValue1() + " " + pairOfTNames.getValue2());
+
+        PairOfT worldCup = new PairOfT<String>("2014", "Brazil");
+        System.out.println(worldCup.getValue1() + " " + worldCup.getValue2());
+    }
+
+    @Test
     public void pairTester() {
-        pair = new Pair <Integer, String> (2010, "South Africa");
-        System.out.println(pair);
+
+        worldCup.setValues(2006, "Germany");
+        worldCup.setValues(2010, "South Africa");
+        worldCup.setValues(2015, "Brazil");
+
+        System.out.println(worldCup);
+
     }
 
     @Test

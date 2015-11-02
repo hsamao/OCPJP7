@@ -20,6 +20,11 @@ public class Pair<T1, T2> {
         this.secondValue = secondValue;
     }
 
+    public void setValues(T1 firstValue, T2 secondValue) {
+        this.firstValue = firstValue;
+        this.secondValue = secondValue;
+    }
+
     public T1 getFirstValue() {
         return firstValue;
     }
