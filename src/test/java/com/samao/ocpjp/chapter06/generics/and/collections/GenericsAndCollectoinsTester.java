@@ -18,6 +18,8 @@ import java.util.Vector;
 @ContextConfiguration(locations = {"classpath:coreJava-config.xml"})
 public class GenericsAndCollectoinsTester {
 
+    @Autowired
+    private OldContainerTest oldContainerTest;
 
     @Before
     public void setUP (){
@@ -30,11 +32,20 @@ public class GenericsAndCollectoinsTester {
     }
 
     @Test
-    public void oldContainerTest(){
+    public void oldContainerTest() throws Exception{
         Vector floatValue = new Vector();
         floatValue.add(10.0f);
         floatValue.add(100.0);
+        try {
+            Float floatTemp = (Float) floatValue.get(1);
+            System.out.println(floatTemp);
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        }
+        finally {
+            System.out.println(floatValue);
 
-        System.out.println(floatValue);
+        }
+
     }
 }
