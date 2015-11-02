@@ -18,6 +18,10 @@ public class BoxPrinter {
         this.object = object;
     }
 
+    public Object getObject() {
+        return object;
+    }
+
     @Override
     public String toString() {
         return "[" + object +

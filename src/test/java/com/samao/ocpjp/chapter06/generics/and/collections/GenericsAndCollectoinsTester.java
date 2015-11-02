@@ -35,9 +35,22 @@ public class GenericsAndCollectoinsTester {
     }
 
     @Test
-    public void boxPrinterTester() {
-        boxPrinter = new BoxPrinter(10);
+    public void boxPrinterTester() throws Exception{
+        boxPrinter = new BoxPrinter(new Integer(10));
         System.out.println(boxPrinter);
+
+        Integer intValue1 = (Integer) boxPrinter.getObject();
+        System.out.println(intValue1);
+
+        BoxPrinter stringValue = new BoxPrinter("Hi there");
+        System.out.println(stringValue);
+
+        try {
+            Integer intValue2 = (Integer) stringValue.getObject();
+            System.out.println(intValue2);
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        }
 
         System.out.println(new BoxPrinter("Hello World"));
     }
