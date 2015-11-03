@@ -8,9 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Vector;
+import java.util.*;
 
 /**
  * Created by hsamao on 11/2/15.
@@ -44,6 +42,9 @@ public class GenericsAndCollectoinsTester {
     @Autowired
     private BoundedWildcardUse boundedWildcardUse;
 
+    @Autowired
+    private Circle circle;
+
     @Before
     public void setUP() {
         System.out.println("setUp was called");
@@ -52,6 +53,13 @@ public class GenericsAndCollectoinsTester {
     @After
     public void tearDown() {
         System.out.println("tearDown was called");
+    }
+
+    @Test
+    public void circleTest(){
+        Set<Circle> circleSet = new HashSet<>();
+        circleSet.add(new Circle(10, 20, 5));
+        System.out.println(circleSet.contains(new Circle(10, 20, 5)));
     }
 
     @Test

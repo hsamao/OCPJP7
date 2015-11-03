@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
  * Created by hsamao on 10/31/15.
  */
 
-@Component
+//@Component
 public class Circle extends Shape implements Rollable {
 
     private int xPos, yPos, radius;
