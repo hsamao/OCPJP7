@@ -9,9 +9,12 @@ public class BinarySearchTest {
 
     public static void main(String[] args) {
         String[] strArr = {"21", "22", "11", "12", "13"};
-        System.out.println("The given strArr is: " + Arrays.toString(strArr));
+        System.out.println("\n \tThe given strArr is: " + Arrays.toString(strArr));
+
+        Arrays.sort(strArr);
+        System.out.println("\n \tstrArr after sorting is " + Arrays.toString(strArr));
 
         int index = Arrays.binarySearch(strArr, "22");
-        System.out.println("The index value is: " + index);
+        System.out.println("\n \tThe index value is: " + index);
     }
 }
