@@ -45,6 +45,9 @@ public class GenericsAndCollectoinsTester {
     @Autowired
     private Circle circle;
 
+    @Autowired
+    private SqlQueue sqlQueue;
+
     @Before
     public void setUP() {
         System.out.println("setUp was called");
@@ -53,6 +56,20 @@ public class GenericsAndCollectoinsTester {
     @After
     public void tearDown() {
         System.out.println("tearDown was called");
+    }
+
+    @Test
+    public void SqlQueueTester(){
+        sqlQueue.addInQueue("Harrison");
+        sqlQueue.addInQueue("McCartney");
+        sqlQueue.addInQueue("Starr");
+        sqlQueue.addInQueue("Lennon");
+
+        sqlQueue.printQueue();
+        sqlQueue.removeFront();
+        sqlQueue.printQueue();
+        sqlQueue.removeBack();
+        sqlQueue.printQueue();
     }
 
     @Test
