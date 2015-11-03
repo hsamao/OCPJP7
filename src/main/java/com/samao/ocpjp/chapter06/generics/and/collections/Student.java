@@ -11,7 +11,7 @@ public class Student implements Comparable <Student> {
 
     private String id;
     private String name;
-    private Double GPA;
+    protected Double GPA;
 
     public Student() {
     }

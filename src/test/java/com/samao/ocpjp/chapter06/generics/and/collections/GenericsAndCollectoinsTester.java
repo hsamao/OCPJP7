@@ -63,15 +63,15 @@ public class GenericsAndCollectoinsTester {
 
     @Test
     public void studentTester() {
-        Student[] students = {new Student("011c", "Harrison", 3.4), new Student("014c", "Starr", 3.0), new Student("013c", "Bob", 2.3)};
+        Student [] students = {new Student("011c", "Harrison", 3.4), new Student("014c", "Starr", 3.0), new Student("013c", "Bob", 2.3)};
         System.out.println("Before storing by student id ");
-        System.out.println("Student ID \t Name \t GPA (for 4.0)");
+        System.out.println("Student-ID \t Name \t CGPA (for 4.0) ");
         System.out.println(Arrays.toString(students));
 
-        Arrays.sort(students);
+        Arrays.sort(students, new GPAComparator());
 
         System.out.println("After storing by student id ");
-        System.out.println("Student ID \t Name \t GPA (for 4.0)");
+        System.out.println("Student-ID \t Name \t GPA (for 4.0) ");
         System.out.println(Arrays.toString(students));
     }
 
