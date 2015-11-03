@@ -48,6 +48,9 @@ public class GenericsAndCollectoinsTester {
     @Autowired
     private SqlQueue sqlQueue;
 
+    @Autowired
+    private Student[]  students;
+
     @Before
     public void setUP() {
         System.out.println("setUp was called");
@@ -56,6 +59,20 @@ public class GenericsAndCollectoinsTester {
     @After
     public void tearDown() {
         System.out.println("tearDown was called");
+    }
+
+    @Test
+    public void studentTester() {
+        Student[] students = {new Student("011c", "Harrison", 3.4), new Student("014c", "Starr", 3.0), new Student("013c", "Bob", 2.3)};
+        System.out.println("Before storing by student id ");
+        System.out.println("Student ID \t Name \t GPA (for 4.0)");
+        System.out.println(Arrays.toString(students));
+
+        Arrays.sort(students);
+
+        System.out.println("After storing by student id ");
+        System.out.println("Student ID \t Name \t GPA (for 4.0)");
+        System.out.println(Arrays.toString(students));
     }
 
     @Test
