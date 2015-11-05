@@ -1,5 +1,6 @@
 package com.samao.ocpjp.chapter07.processing.string.test;
 
+import com.samao.ocpjp.chapter07.processing.string.Circle;
 import com.samao.ocpjp.chapter07.processing.string.Regex7;
 import org.junit.After;
 import org.junit.Before;
@@ -20,6 +21,9 @@ public class ProcessingStringTest {
     @Autowired
     private Regex7 regex7;
 
+    @Autowired
+    private Circle circle;
+
     @Before
     public void setUp () {
         System.out.println("setUP was called");
@@ -28,6 +32,16 @@ public class ProcessingStringTest {
     @After
     public void tearDown() {
         System.out.println("tearDown was called");
+    }
+
+    @Test
+    public void circleTester () throws Exception{
+        try {
+            circle = new Circle(10, 10, 5);
+            circle.area();
+        } catch (Exception ex){
+            System.out.println(ex.getMessage());
+        }
     }
 
     @Test

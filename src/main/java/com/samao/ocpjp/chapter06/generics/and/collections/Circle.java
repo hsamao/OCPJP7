@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
  * Created by hsamao on 11/3/15.
  */
 
-@Component
+//@Component
 public class Circle {
 
     private int xPos;
