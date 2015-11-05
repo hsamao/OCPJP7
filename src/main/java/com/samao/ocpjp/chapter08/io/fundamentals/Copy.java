@@ -21,12 +21,16 @@ public class Copy {
             int ch = 0;
             while ((ch = inputFile.read()) != -1){
                 outputFile.write((char) ch);
+
             }
+            outputFile.flush();
+            outputFile.close();
 
         } catch (FileNotFoundException ex){
             System.err.println("Files are not exist in the current directory");
         } catch (IOException ex){
             System.err.println(ex.getMessage());
         }
+
     }
 }
