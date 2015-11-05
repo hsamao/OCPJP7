@@ -13,11 +13,12 @@ public class FormattedTable {
         System.out.println("----------------------------------------------------");
     }
 
-    public void printHeader(){
+    public void printHeader() {
         System.out.printf("%-15s \t %s \t %s \t %s\n", "Player", "Matches", "Goals", "Goals per match");
     }
 
-    public void printRow(String player, int matches, int goals){
-        System.out.printf("%-15s \t %5d \t\t %d \t\t %.1f\n", player, matches, goals, ((float)goals/(float)matches));
+    public void printRow(String player, int matches, int goals) {
+        String str = String.format("%-15s \t %5d \t\t %d \t\t %.1f\n", player, matches, goals, ((float) goals / (float) matches));
+        System.out.printf(str);
     }
 }
