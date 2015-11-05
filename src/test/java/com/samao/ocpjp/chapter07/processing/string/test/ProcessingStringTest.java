@@ -1,6 +1,7 @@
 package com.samao.ocpjp.chapter07.processing.string.test;
 
 import com.samao.ocpjp.chapter07.processing.string.Circle;
+import com.samao.ocpjp.chapter07.processing.string.FormattedTable;
 import com.samao.ocpjp.chapter07.processing.string.Regex7;
 import org.junit.After;
 import org.junit.Before;
@@ -24,6 +25,9 @@ public class ProcessingStringTest {
     @Autowired
     private Circle circle;
 
+    @Autowired
+    FormattedTable formattedTable;
+
     @Before
     public void setUp () {
         System.out.println("setUP was called");
@@ -32,6 +36,21 @@ public class ProcessingStringTest {
     @After
     public void tearDown() {
         System.out.println("tearDown was called");
+    }
+
+    @Test
+    public void formattedTableTester() throws Exception{
+        try {
+            formattedTable.line();
+            formattedTable.printHeader();
+            formattedTable.line();
+            formattedTable.printRow("Demando", 100, 122);
+            formattedTable.printRow("Mushi", 80, 100);
+            formattedTable.printRow("Peale", 150, 180);
+            formattedTable.line();
+        } catch (Exception ex){
+            System.out.println(ex.getMessage());
+        }
     }
 
     @Test
