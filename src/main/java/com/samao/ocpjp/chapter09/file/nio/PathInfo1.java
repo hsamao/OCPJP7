@@ -9,7 +9,7 @@ import java.nio.file.Paths;
 public class PathInfo1 {
 
     public static void main (String [] args){
-        Path path = Paths.get("/Users/hsamao/textfile.txt");
+        Path path = Paths.get("/Users/hsamao/extfile.txt");
 
         System.out.println("File path details\n");
         System.out.println("\t File name : \t" + path.getFileName());
