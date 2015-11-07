@@ -8,7 +8,7 @@ import java.sql.DriverManager;
  */
 public class DbConnectorUtility {
 
-    public Connection connectToDB () throws Exception {
+    public static Connection connectToDB () throws Exception {
 
         String url = "jdbc:mysql://localhost:3307/";
         String database = "addressBook";
