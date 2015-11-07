@@ -21,15 +21,20 @@ public class DbQuery {
             System.out.println(" Id \t firstName \t lastName\t\t email\t\t\t phoneNo");
             System.out.println("----------------------------------------------------------");
 
-            /*int numOfColumns = resultSet.getMetaData().getColumnCount();
+            int numOfColumns = resultSet.getMetaData().getColumnCount();
             while (resultSet.next()){
                 for (int i = 1; i <= numOfColumns; i++){
                     System.out.print(resultSet.getObject(i) + "\t");
                 }
                 System.out.println();
-            }*/
+            }
+            System.out.println();
 
+            System.out.println("----------------------------------------------------------");
+            System.out.println(" Id \t firstName \t lastName\t\t email\t\t\t phoneNo");
+            System.out.println("----------------------------------------------------------");
 
+            resultSet.beforeFirst();
             while (resultSet.next()) {
                 System.out.println(resultSet.getInt("id") + "\t\t" +
                         resultSet.getString("firstName") + "\t\t" +
