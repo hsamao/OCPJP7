@@ -42,13 +42,13 @@ public class DbSavePoint {
 
             connection.rollback(secondSavePoint);
             System.out.println("Rolled back to previous last insertion");
-            // connection.commit();
+            connection.commit();
 
             System.out.println("FAMILY_GROUP AFTER UPDATING\n");
 
-            ResultSet resultSet1 = statement.executeQuery("SELECT * FROM FAMILY_GROUP;");
-            while (resultSet1.next()) {
-                System.out.println(resultSet1.getString("NICKNAME"));
+          resultSet.beforeFirst();
+            while (resultSet.next()) {
+                System.out.println(resultSet.getString("NICKNAME"));
             }
 
 
