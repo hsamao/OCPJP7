@@ -2,20 +2,24 @@ package com.samao.ocpjp.chapter10.jdbc;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 
 /**
  * Created by hsamao on 11/6/15.
  */
-public class DbUpdate {
-    public static void main(String[] args) throws Exception {
+public class DbUpdate2 {
+
+    public static void main(String[] args) throws SQLException {
 
         try (Connection connection = DbConnectorUtility.connectToDB()) {
-            String sql = "Select * from contact where firstName = \"Michael\";";
 
-            Statement statement = connection.createStatement();
+            String sql = "SELECT * FROM CONTACT " +
+                    "WHERE firstName = \"William\";";
+            Statement statement = connection.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
             ResultSet resultSet = statement.executeQuery(sql);
-            System.out.println("Before update");
+
+            System.out.println("Before Update");
             while (resultSet.next()) {
                 System.out.println(resultSet.getInt("id") + "\t" +
                         resultSet.getString("firstName") + "\t" +
@@ -24,11 +28,11 @@ public class DbUpdate {
                         resultSet.getString("phoneNo"));
             }
 
-
             resultSet.absolute(1);
-            resultSet.updateString("phoneNo", "+9123456789");
+            resultSet.updateString("email", "william@gmail.com");
+            resultSet.updateRow();
 
-            System.out.println("After update");
+            System.out.println("After Update");
 
             resultSet.beforeFirst();
 
@@ -40,9 +44,9 @@ public class DbUpdate {
                         resultSet.getString("phoneNo"));
             }
 
-        } catch (Exception ex) {
-            System.out.println("Failed");
-            System.out.println(ex.getMessage());
+
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
         }
     }
 }
