@@ -15,6 +15,9 @@ public class ScanInt2 {
             System.out.println("You typed the integer value: " + consoleScanner.nextInt());
         } catch (InputMismatchException ex) {
             System.out.println("Error: you typed some text that is not an integer value...");
+            System.out.println("The calls in the stack trace are: ");
+            for (StackTraceElement methodCall : ex.getStackTrace())
+                System.out.println(methodCall);
+            }
         }
     }
-}
