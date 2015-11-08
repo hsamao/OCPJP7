@@ -7,7 +7,7 @@ import java.util.Scanner;
 /**
  * Created by hsamao on 11/8/15.
  */
-public class ScanInt4 {
+public class ScanInt5 {
     public static void main (String [] args){
         String integerStr = "";
         System.out.println("The string to scan integer from it is: " + integerStr);
@@ -15,12 +15,8 @@ public class ScanInt4 {
 
         try {
             System.out.println("The integer value scanned from string is: " + consoleScanner.nextInt());
-        } catch (InputMismatchException ex){
-            System.out.println("Error: Cannot scan an integer from the given string");
-        } catch (NoSuchElementException ex){
-            System.out.println("Error: Please provide a value");
-        } catch (IllegalStateException ex){
-            System.out.println("Error: nextInt() called on a closed Scanner object");
+        } catch (NoSuchElementException | IllegalStateException multi){
+            System.out.println("Error: An error occurred while attempting to scan the integer");
         }
     }
 }
