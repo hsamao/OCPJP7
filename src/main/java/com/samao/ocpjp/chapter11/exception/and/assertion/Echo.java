@@ -8,6 +8,7 @@ public class Echo {
         if (args.length == 0) {
             System.out.println("Error: No input passed to echo command... ");
             System.exit(-1);
+//           throw new IllegalArgumentException("No input passed to echo command");
         } else {
             for (String str : args) {
                 System.out.print(str + " ");
