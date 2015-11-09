@@ -5,7 +5,7 @@ package com.samao.ocpjp.chapter11.exception.and.assertion;
  */
 public class AssertionExample1 {
         public static void main(String []args) {
-            int i = -10;
+            int i = -2147483648;
             if(i < 0) {
 // if negative value, convert into positive value
                 i = -i;
