@@ -8,6 +8,8 @@ import java.util.Scanner;
 /**
  * Created by hsamao on 11/9/15.
  */
+
+
 public class ThrowsClause4 implements IntReader {
 
     @Override
