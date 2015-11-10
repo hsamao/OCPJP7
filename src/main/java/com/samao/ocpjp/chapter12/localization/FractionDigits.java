@@ -11,8 +11,10 @@ public class FractionDigits {
     public static void main (String [] args){
         String [] numbers = {"1.222", "0.12345F"};
         double [] doubles = {1.222, 0.12345F};
+        int [] number = {1, 3, 4};
 
-        NumberFormat numberFormat = NumberFormat.getNumberInstance();
+        NumberFormat numberFormat = NumberFormat.getInstance();
+        numberFormat.setMaximumFractionDigits(2);
 
         System.out.println("Using Formant Method: ");
         for (double val : doubles){
