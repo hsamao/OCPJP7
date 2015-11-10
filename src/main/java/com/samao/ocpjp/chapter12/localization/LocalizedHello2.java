@@ -8,17 +8,15 @@ import java.util.ResourceBundle;
  */
 public class LocalizedHello2 {
 
-    public static void printMovieDetails(ResourceBundle resourceBundle) {
-        String movieName = resourceBundle.getString("MovieName");
-        Long revenue = (Long) resourceBundle.getObject("GrossRevenue");
-        Integer year = (Integer) resourceBundle.getObject("Year");
-
+    public static void printMovieDetails(ResourceBundle resBundle) {
+        String movieName = resBundle.getString("MovieName");
+        Long revenue = (Long)(resBundle.getObject("GrossRevenue"));
+        Integer year = (Integer) resBundle.getObject("Year");
         System.out.println("Movie " + movieName + "(" + year + ")" + " grossed "
-                + revenue);
+                + revenue );
     }
-
-    public static void main(String[] args) {
-
+    public static void main(String args[]) {
+// print the largest box-office hit movie for default (US) locale
         Locale locale = Locale.getDefault();
         printMovieDetails(ResourceBundle.getBundle("ResBundle", locale));
 // print the largest box-office hit movie for Italian locale
