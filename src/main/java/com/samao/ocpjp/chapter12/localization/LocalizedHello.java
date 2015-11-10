@@ -10,7 +10,7 @@ public class LocalizedHello {
     public static void main (String [] args){
 //        Locale.setDefault(Locale.ITALIAN);
         Locale currentLocale = Locale.getDefault();
-        System.out.println(currentLocale);
+
         ResourceBundle resourceBundle = ResourceBundle.getBundle("ResourceBundle", currentLocale);
         System.out.println(resourceBundle.getString("Greeting"));
     }
