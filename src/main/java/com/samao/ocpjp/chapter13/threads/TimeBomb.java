@@ -24,10 +24,10 @@ public class TimeBomb extends Thread {
 
     }
 
-    public static void main(String[] args) {
+    /*public static void main(String[] args) {
         TimeBomb timer = new TimeBomb();
         System.out.println("Starting 10 second count down. . . ");
         timer.start();
         System.out.println("Boom!!!");
-    }
+    }*/
 }

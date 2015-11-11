@@ -39,6 +39,11 @@ public class ThreadsTest {
     public void timeBombTester(){
         System.out.println("Starting 10 second count down. . . ");
         timeBomb.start();
+        try {
+            timeBomb.join();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         System.out.println("Boom!!!");
     }
 
