@@ -22,6 +22,9 @@ public class ThreadsTest {
     @Autowired
     MyThread2 myThread2;
 
+    @Autowired
+    TimeBomb timeBomb;
+
     @Before
     public void setUP() {
         System.out.println("Setup was called");
@@ -30,6 +33,13 @@ public class ThreadsTest {
     @After
     public void tearDown() {
         System.out.println("TearDown was called");
+    }
+
+    @Test
+    public void timeBombTester(){
+        System.out.println("Starting 10 second count down. . . ");
+        timeBomb.start();
+        System.out.println("Boom!!!");
     }
 
     @Test
