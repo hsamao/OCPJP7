@@ -12,7 +12,7 @@ public class AsyncThread extends Thread {
         for (int i = 0; i < 3; i++) {
             System.out.println("In thread " + getName() + "; iteration " + i);
             try {
-                sleep(10);
+                sleep(1000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
