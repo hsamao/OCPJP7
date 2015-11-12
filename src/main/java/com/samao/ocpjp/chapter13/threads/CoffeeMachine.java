@@ -27,7 +27,7 @@ public class CoffeeMachine extends Thread {
             System.out.println("Coffee machine: Notifying waiter to pick the coffee ");
         }
         }
-    }
+
     public void run() {
         while(true) {
             makeCoffee();
@@ -44,4 +44,4 @@ public class CoffeeMachine extends Thread {
         }
     }
 }
-}
+
