@@ -5,7 +5,7 @@ import java.util.concurrent.Executor;
 /**
  * Created by hsamao on 11/17/15.
  */
-public class RepeatedExcutor implements Executor {
+public class RepeatedExecutor implements Executor {
 
     @Override
     public void execute(Runnable runnable) {
